@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#00264C] text-white">
       <div className="max-w-[1150px] mx-auto px-4 py-6">
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Latest News Column */}
           <div>
             <h2 className="text-[13px] mb-5 tracking-wide">
@@ -71,21 +71,21 @@ export default function Footer() {
               ВЕСТНИК ТОМСКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА
             </h2>
             <div>
-              {/* <Image
-                src="/public/1.png"
+              <Image
+                src="/images/journal-cover.png"
                 alt="Вестник журнала"
                 width={250}
                 height={250}
                 className="border border-[#1A3F66]"
-              /> */}
+              />
               <div className="flex items-center gap-2 mt-4">
-                {/* <Image
-                  src="/placeholder.svg?height=16&width=16"
-                  alt=""
+                <Image
+                  src="/icons/add.svg"
+                  alt="Добавить"
                   width={16}
                   height={16}
                   className="opacity-80"
-                /> */}
+                />
                 <Link href="#" className="text-[11px] hover:text-[#B4B4B4]">
                   Вы можете добавить статью
                 </Link>
@@ -97,42 +97,42 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#6d759b] mt-4">
-        <div className="max-w-[1000px] mx-auto px-4 py-2 flex justify-between items-center text-[11px]">
+        <div className="max-w-[1000px] mx-auto px-4 py-2 flex flex-wrap justify-between items-center text-[11px]">
           <div className="flex items-center space-x-1 p-6">
             <span>
               © 1998 - 2025 Вестник Томского государственного университета
             </span>
             <div className="flex items-center ml-4">
               <Link href="#" className="flex items-center">
-                {/* <Image
-                  src="/placeholder.svg?height=16&width=16"
+                <Image
+                  src="/icons/ru.svg"
                   alt="RU"
                   width={16}
                   height={16}
                   className="mr-1"
-                /> */}
+                />
                 RU
               </Link>
               <span className="mx-1 text-[#4D7093]">|</span>
-              <Link href="#" className="flex items-center opacity-50">
-                {/* <Image
-                  src="/placeholder.svg?height=16&width=16"
+              <Link href="#" className="flex items-center">
+                <Image
+                  src="/icons/en.svg"
                   alt="EN"
                   width={16}
                   height={16}
                   className="mr-1"
-                /> */}
+                />
                 EN
               </Link>
             </div>
           </div>
 
-          <div className="flex items-center  space-x-4 text-[#4D7093] ">
+          <div className="flex flex-wrap items-center space-x-4 text-[#4D7093] ">
             <Link href="#" className="hover:text-white">
               Главная
             </Link>
             <Link href="#" className="hover:text-white">
-              журнале
+              Журнале
             </Link>
             <Link href="#" className="hover:text-white">
               Архив

@@ -27,7 +27,7 @@ const Navbar = () => {
               РЕДАКЦИЯ
             </button>
             {editorialOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-md">
+              <div className="absolute left-0 mt-2 w-48 bg-white text-black shadow-lg rounded-md z-10">
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">
                   О журнале
                 </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
               АВТОРАМ
             </button>
             {authorsOpen && (
-              <div className="absolute left-0 mt-2 w-60 bg-white text-black shadow-lg rounded-md">
+              <div className="absolute left-0 mt-2 w-60 bg-white text-black shadow-lg rounded-md z-10">
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">
                   Правила публикации
                 </a>

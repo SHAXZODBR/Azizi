@@ -1,11 +1,13 @@
 import { authorContent } from "@/content/authors";
 
-export default async function AuthorDetails({
+type AuthorKeys = keyof typeof authorContent; // Extract valid keys
+
+export default function AuthorDetails({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: AuthorKeys }; // Ensure `slug` is one of the known keys
 }) {
-  const { slug } = await params; // Ensure `params` is awaited
+  const { slug } = params;
 
   const pageData = authorContent[slug];
 

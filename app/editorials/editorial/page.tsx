@@ -1,6 +1,3 @@
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
-
 export default function Component() {
   return (
     <div className="w-full max-w-6xl mx-auto m-12 p-4">

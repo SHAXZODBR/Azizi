@@ -1,3 +1,10 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/editorials/page": "app/editorials/page.js",
+  "/editorials/editorial/page": "app/editorials/editorial/page.js",
+  "/editorials/contacts/page": "app/editorials/contacts/page.js",
+  "/ethics/page": "app/ethics/page.js",
+  "/authors/page": "app/authors/page.js",
+  "/news/page": "app/news/page.js"
 }

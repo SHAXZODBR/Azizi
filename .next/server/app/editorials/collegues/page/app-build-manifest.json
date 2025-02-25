@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "/editorials/collegues/page": [
+      "static/chunks/node_modules_next_dist_215c0736._.js",
+      "static/chunks/app_favicon_ico_mjs_1b44763e._.js",
+      "static/chunks/[root of the server]__98144f0b._.css",
+      "static/chunks/node_modules_next_dist_bb0621cb._.js",
+      "static/chunks/node_modules_react-icons_fa_index_mjs_d2e2d7f5._.js",
+      "static/chunks/node_modules_react-icons_lib_74ccc930._.js",
+      "static/chunks/node_modules_6019879d._.js",
+      "static/chunks/_73a4f77a._.js",
+      "static/chunks/app_layout_tsx_ca33a7b8._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_d04ae8be._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js",
+      "static/chunks/node_modules_next_dist_compiled_38d265cf._.js",
+      "static/chunks/node_modules_next_dist_client_02724d5b._.js",
+      "static/chunks/node_modules_next_dist_6b15bd81._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
+      "static/chunks/_e69f0d32._.js",
+      "static/chunks/_a62f4902._.js"
+    ]
+  }
+}

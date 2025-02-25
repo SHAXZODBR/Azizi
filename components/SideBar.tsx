@@ -8,7 +8,11 @@ const SideBar = () => {
       <div className="bg-[#003366] p-4 text-white mb-6">
         <h3 className="text-lg mb-4">Авторам</h3>
         <p className="font-medium text-xs pb-2">Вы можете отправить статью</p>
-        <Button variant="secondary" className="w-full text-sm bg-blue-600">
+        <Button
+          variant="secondary"
+          className="w-full text-sm bg-blue-600"
+          asChild
+        >
           <a href="#">ОТПРАВИТЬ СТАТЬЮ</a>
         </Button>
       </div>
@@ -21,8 +25,8 @@ const SideBar = () => {
           className="inline-block border border-gray-300"
         />
       </div>
-      <p className="font-medium text-xs  text-blue-500">
-        <a href="#">
+      <p className="font-medium text-xs text-blue-500">
+        <a href="#" className="hover:underline">
           Вестник Томского государственного университета. 2025 №510
         </a>
       </p>

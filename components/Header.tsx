@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const Header = () => {
@@ -9,22 +10,22 @@ const Header = () => {
       <div className="bg-[#003366] h-8 flex items-center justify-end px-4 text-xs text-white">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <a href="#" className="hover:text-sky-200">
+            <Link href="#" className="hover:text-sky-200">
               🇷🇺 RU
-            </a>
+            </Link>
             <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-sky-200">
+            <Link href="#" className="hover:text-sky-200">
               🇬🇧 EN
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-2">
-            <a href="#" className="hover:text-sky-200">
+            <Link href="/login" className="hover:text-sky-200">
               Вход
-            </a>
+            </Link>
             <span className="text-gray-400">|</span>
-            <a href="#" className="hover:text-sky-200">
+            <Link href="/register" className="hover:text-sky-200">
               Регистрация
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -36,89 +37,107 @@ const Header = () => {
             Вестник Томского государственного университета
           </h1>
           <div className="mt-4 flex flex-wrap gap-0 text-sm">
-            <a
+            <Link
               href="/"
               className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488]"
             >
               ГЛАВНАЯ
-            </a>
+            </Link>
 
             {/* РЕДАКЦИЯ with Hover Dropdown */}
             <div className="relative group">
-              <a
+              <Link
                 href="/editorials/"
                 className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488] flex items-center"
               >
                 РЕДАКЦИЯ
-              </a>
+              </Link>
               <div className="absolute left-0 w-48 bg-[#003366] text-white shadow-lg rounded-md hidden group-hover:block">
-                <a
+                <Link
                   href="/editorials/editorial/"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
                   Редакции
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/editorials/collegues/"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
                   Редакционная коллегия
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/editorials/contacts/"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
                   Контакты
-                </a>
+                </Link>
               </div>
             </div>
 
-            <a
+            <Link
               href="#"
               className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488]"
             >
               АРХИВ
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/news/"
               className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488]"
             >
               НОВОСТИ
-            </a>
-            <a
+            </Link>
+            <Link
               href="/ethics/"
               className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488]"
             >
               ЭТИКА
-            </a>
+            </Link>
 
             {/* АВТОРАМ with Hover Dropdown */}
             <div className="relative group">
-              <a
+              <Link
                 href="/authors/"
                 className="px-6 py-3 hover:bg-[#004488] flex items-center"
               >
                 АВТОРАМ
-              </a>
+              </Link>
               <div className="absolute left-0 w-60 bg-[#003366] text-white shadow-lg rounded-md hidden group-hover:block">
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                <Link
+                  href="/authors/rules"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Правила публикации
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                </Link>
+                <Link
+                  href="/authors/preparation"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Подготовка статьи
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                </Link>
+                <Link
+                  href="/authors/review"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Рецензирование
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                </Link>
+                <Link
+                  href="/authors/policy"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Политика журнала
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                </Link>
+                <Link
+                  href="/authors/copyright"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Авторские права
-                </a>
-                <a href="#" className="block px-4 py-2 hover:bg-[#004488]">
+                </Link>
+                <Link
+                  href="/authors/faq"
+                  className="block px-4 py-2 hover:bg-[#004488]"
+                >
                   Часто задаваемые вопросы
-                </a>
+                </Link>
               </div>
             </div>
           </div>
