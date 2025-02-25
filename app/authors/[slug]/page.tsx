@@ -6,7 +6,11 @@ interface PageProps {
   params: { slug: string }; // Ensure params is always a string
 }
 
-export default function AuthorDetails({ params }: PageProps) {
+export default function AuthorDetails({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const slug = params.slug as AuthorKeys; // Cast slug to valid keys
 
   console.log("Params received:", params); // Debugging log
