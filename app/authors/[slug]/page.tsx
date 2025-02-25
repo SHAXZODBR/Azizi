@@ -1,21 +1,18 @@
+import { use } from "react";
 import { authorContent } from "@/content/authors";
 
 type AuthorKeys = keyof typeof authorContent;
 
-interface PageProps {
-  params: { slug: string }; // Ensure params is always a string
-}
-
 export default function AuthorDetails({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug as AuthorKeys; // Cast slug to valid keys
+  const { slug } = use(params); // Use `use()` to unwrap the Promise
 
-  console.log("Params received:", params); // Debugging log
+  console.log("Params received:", slug); // Debugging log
 
-  const pageData = authorContent[slug];
+  const pageData = authorContent[slug as AuthorKeys];
 
   if (!pageData) {
     return (
