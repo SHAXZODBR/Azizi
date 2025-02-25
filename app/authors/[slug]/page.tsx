@@ -1,13 +1,15 @@
 import { authorContent } from "@/content/authors";
 
-type AuthorKeys = keyof typeof authorContent; // Extract valid keys
+type AuthorKeys = keyof typeof authorContent;
 
-export default function AuthorDetails({
-  params,
-}: {
-  params: { slug: AuthorKeys }; // Ensure `slug` is one of the known keys
-}) {
-  const { slug } = params;
+interface PageProps {
+  params: { slug: string }; // Ensure params is always a string
+}
+
+export default function AuthorDetails({ params }: PageProps) {
+  const slug = params.slug as AuthorKeys; // Cast slug to valid keys
+
+  console.log("Params received:", params); // Debugging log
 
   const pageData = authorContent[slug];
 
