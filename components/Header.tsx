@@ -75,7 +75,7 @@ const Header = () => {
             </div>
 
             <Link
-              href="#"
+              href="/archive/"
               className="px-6 py-3 border-r border-blue-700 hover:bg-[#004488]"
             >
               АРХИВ
