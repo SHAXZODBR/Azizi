@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/shaxzodbr/Desktop/Azizi/Azizi/app/editorials/editorial/%5Bcategory%5D/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { useParams } from \"next/navigation\";\nimport categoryContent from \"@/app/editorials/editorial/categoryData\";\n\nexport default function EditorialCategory() {\n  const params = useParams();\n  const category = decodeURIComponent(params?.category || \"\");\n\n  console.log(\"Category from URL:\", category);\n  console.log(\"Available categories:\", Object.keys(categoryContent));\n\n  const content = categoryContent[category] || \"Контент не найден\";\n\n  return (\n    <div className=\"max-w-4xl mx-auto p-6\">\n      <h1 className=\"text-2xl font-bold\">Редакция: {category}</h1>\n      <p className=\"mt-4 whitespace-pre-line\">{content}</p>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAEA;;;;;;;;AAFA;;;AAKe,SAAS;;IACtB,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IACvB,MAAM,WAAW,mBAAmB,QAAQ,YAAY;IAExD,QAAQ,GAAG,CAAC,sBAAsB;IAClC,QAAQ,GAAG,CAAC,yBAAyB,OAAO,IAAI,CAAC;IAEjD,MAAM,UAAU,eAAe,CAAC,SAAS,IAAI;IAE7C,qBACE,6LAAC;QAAI,WAAU;;0BACb,6LAAC;gBAAG,WAAU;;oBAAqB;oBAAW;;;;;;;0BAC9C,6LAAC;gBAAE,WAAU;0BAA4B;;;;;;;;;;;;AAG/C;GAfwB;;QACP,qIAAA,CAAA,YAAS;;;KADF"}},
+    {"offset": {"line": 69, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 79, "column": 0}, "map": {"version":3,"sources":["file:///home/shaxzodbr/Desktop/Azizi/Azizi/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 80, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

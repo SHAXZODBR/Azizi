@@ -1,0 +1,49 @@
+{
+  "node": {
+    "00a570fbc2494224abd087ba97aabaa233f98dbc9c": {
+      "workers": {
+        "app/archive/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/archive/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/archive/[id]/page": "rsc"
+      }
+    },
+    "00b4f485c98d225b2c3964da2b88d49084ea0c79aa": {
+      "workers": {
+        "app/archive/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/archive/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/archive/[id]/page": "rsc"
+      }
+    },
+    "4054c27038d3fd33a11b8eab3d8aa88485535ac682": {
+      "workers": {
+        "app/archive/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/archive/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/archive/[id]/page": "rsc"
+      }
+    },
+    "4073942f3fd188c99a2c206c7a7c73054ebbeabac6": {
+      "workers": {
+        "app/archive/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/archive/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/archive/[id]/page": "rsc"
+      }
+    }
+  },
+  "edge": {}
+}

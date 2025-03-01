@@ -66,32 +66,6 @@ export default function Footer() {
           </div>
 
           {/* Journal Column */}
-          <div>
-            <h2 className="text-[13px] mb-5 tracking-wide">
-              ВЕСТНИК ТОМСКОГО ГОСУДАРСТВЕННОГО УНИВЕРСИТЕТА
-            </h2>
-            <div>
-              <Image
-                src="/images/journal-cover.png"
-                alt="Вестник журнала"
-                width={250}
-                height={250}
-                className="border border-[#1A3F66]"
-              />
-              <div className="flex items-center gap-2 mt-4">
-                <Image
-                  src="/icons/add.svg"
-                  alt="Добавить"
-                  width={16}
-                  height={16}
-                  className="opacity-80"
-                />
-                <Link href="#" className="text-[11px] hover:text-[#B4B4B4]">
-                  Вы можете добавить статью
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -103,27 +77,7 @@ export default function Footer() {
               © 1998 - 2025 Вестник Томского государственного университета
             </span>
             <div className="flex items-center ml-4">
-              <Link href="#" className="flex items-center">
-                <Image
-                  src="/icons/ru.svg"
-                  alt="RU"
-                  width={16}
-                  height={16}
-                  className="mr-1"
-                />
-                RU
-              </Link>
               <span className="mx-1 text-[#4D7093]">|</span>
-              <Link href="#" className="flex items-center">
-                <Image
-                  src="/icons/en.svg"
-                  alt="EN"
-                  width={16}
-                  height={16}
-                  className="mr-1"
-                />
-                EN
-              </Link>
             </div>
           </div>
 
@@ -131,19 +85,17 @@ export default function Footer() {
             <Link href="#" className="hover:text-white">
               Главная
             </Link>
-            <Link href="#" className="hover:text-white">
-              Журнале
-            </Link>
-            <Link href="#" className="hover:text-white">
+
+            <Link href="/archive/" className="hover:text-white">
               Архив
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link href="/news/" className="hover:text-white">
               Новости
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link href="/authors/" className="hover:text-white">
               Авторам
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link href="/" className="hover:text-white">
               ↑ наверх
             </Link>
           </div>

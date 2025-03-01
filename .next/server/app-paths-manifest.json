@@ -1,5 +1,15 @@
 {
-  "/archive/page": "app/archive/page.js",
+  "/editorials/editorial/page": "app/editorials/editorial/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/editorials/page": "app/editorials/page.js",
+  "/editorials/collegues/page": "app/editorials/collegues/page.js",
+  "/editorials/contacts/page": "app/editorials/contacts/page.js",
+  "/editorials/editorial/[category]/page": "app/editorials/editorial/[category]/page.js",
   "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/archive/page": "app/archive/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/news/page": "app/news/page.js",
+  "/ethics/page": "app/ethics/page.js",
+  "/authors/page": "app/authors/page.js",
+  "/authors/[slug]/page": "app/authors/[slug]/page.js"
 }

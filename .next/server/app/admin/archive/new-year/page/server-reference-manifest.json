@@ -1,0 +1,126 @@
+{
+  "node": {
+    "00b4f485c98d225b2c3964da2b88d49084ea0c79aa": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "4073942f3fd188c99a2c206c7a7c73054ebbeabac6": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "406b50b59c3c5a63e45b0f91736e5648bac65d28be": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "40a5fa1492967767836516c5e2dc572e877853b228": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "406be48d2fafcf5caca11262cb3be6e91cb8997933": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "00a570fbc2494224abd087ba97aabaa233f98dbc9c": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "40370aedafb3777504cb57b355465dc9604c0bcfc9": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "40465a1a2abc88bc23dfc4fba67ce1bcffe2048f3d": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "40c49a617bc4edde57328a1231d014b3f3b8e06b23": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "4054c27038d3fd33a11b8eab3d8aa88485535ac682": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    },
+    "60b7c8568dc3a02c584d2a01b0b920c89d99520cb9": {
+      "workers": {
+        "app/admin/archive/new-year/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/archive/new-year/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions/archive.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/archive/new-year/page": "rsc"
+      }
+    }
+  },
+  "edge": {}
+}

@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":["file:///home/shaxzodbr/Desktop/Azizi/Azizi/app/editorials/editorial/%5Bcategory%5D/page.tsx"],"sourcesContent":["import { useRouter } from \"next/router\";\n\nconst categoryContent = {\n  history: \"Контент по истории...\",\n  \"pedagogy-general\": \"Общая информация о педагогике...\",\n  \"pedagogy-languages\": \"Преподавание языков...\",\n  \"pedagogy-sport\": \"Физическая культура...\",\n  law: \"Правовые материалы...\",\n  \"sociology-politics\": \"Социология и политология...\",\n  philology: \"Филология...\",\n  philosophy: \"Философия...\",\n};\n\nexport default function EditorialCategory() {\n  const router = useRouter();\n  const { category } = router.query;\n  const content = categoryContent[category] || \"Категория не найдена.\";\n\n  return (\n    <div className=\"max-w-4xl mx-auto p-6\">\n      <h1 className=\"text-2xl font-bold\">Редакция: {category}</h1>\n      <p className=\"mt-4\">{content}</p>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEA,MAAM,kBAAkB;IACtB,SAAS;IACT,oBAAoB;IACpB,sBAAsB;IACtB,kBAAkB;IAClB,KAAK;IACL,sBAAsB;IACtB,WAAW;IACX,YAAY;AACd;AAEe,SAAS;IACtB,MAAM,SAAS,CAAA,GAAA,8HAAA,CAAA,YAAS,AAAD;IACvB,MAAM,EAAE,QAAQ,EAAE,GAAG,OAAO,KAAK;IACjC,MAAM,UAAU,eAAe,CAAC,SAAS,IAAI;IAE7C,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAG,WAAU;;oBAAqB;oBAAW;;;;;;;0BAC9C,8OAAC;gBAAE,WAAU;0BAAQ;;;;;;;;;;;;AAG3B"}},
+    {"offset": {"line": 81, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 92, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 92, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

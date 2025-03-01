@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getSession } from "@/app/actions/auth";
 
 // This represents the data structure for each archive entry
 interface ArchiveEntry {
@@ -21,7 +22,7 @@ interface YearData {
 }
 
 // Mock data structure - replace with your actual data fetching logic
-const getArchiveData = (): YearData[] => {
+const getArchiveData = async (): Promise<YearData[]> => {
   // In a real implementation, this would come from your database
   return [
     {
@@ -252,100 +253,119 @@ const months = [
   "Декабрь",
 ];
 
-export default function ArchivePage() {
-  const archiveData = getArchiveData();
+export default async function ArchivePage() {
+  const archiveData = await getArchiveData();
+  const session = await getSession();
+  const isAdmin = session?.role === "admin";
 
   return (
-    <div
-      style={{ fontFamily: "Arial, sans-serif", padding: "0", margin: "50px" }}
-    >
-      <table
-        cellPadding="0"
-        cellSpacing="0"
+    <div className="min-h-screen flex flex-col">
+      <div
         style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          border: "1px solid #ccc",
+          fontFamily: "Arial, sans-serif",
+          padding: "0",
+          margin: "50px",
         }}
       >
-        <thead>
-          <tr>
-            <td
-              style={{
-                padding: "38px",
-                backgroundColor: "#e6e6e6",
-                border: "1px solid #ccc",
-                fontWeight: "normal",
-                textAlign: "center",
-              }}
-            ></td>
-            {months.map((month) => (
+        <table
+          cellPadding="0"
+          cellSpacing="0"
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            border: "1px solid #ccc",
+          }}
+        >
+          <thead>
+            <tr>
               <td
-                key={month}
                 style={{
-                  padding: "8px",
+                  padding: "38px",
                   backgroundColor: "#e6e6e6",
                   border: "1px solid #ccc",
                   fontWeight: "normal",
                   textAlign: "center",
-                  minWidth: "100px",
                 }}
-              >
-                {month}
-              </td>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {archiveData.map((yearData) => (
-            <tr key={yearData.year}>
-              <td
-                style={{
-                  padding: "12px",
-                  backgroundColor: "#e6e6e6",
-                  border: "1px solid #ccc",
-                  textAlign: "left",
-                }}
-              >
-                {yearData.year} год
-              </td>
-              {months.map((_, monthIndex) => {
-                const entry = yearData.entries[monthIndex];
-                return (
-                  <td
-                    key={monthIndex}
-                    style={{
-                      padding: "8px",
-                      border: "1px solid #ccc",
-                      textAlign: "center",
-                      backgroundColor: "#f9f9f9",
-                    }}
-                  >
-                    {entry ? (
-                      entry.status ? (
-                        <span style={{ color: "#666", fontSize: "14px" }}>
-                          {entry.status}
-                        </span>
-                      ) : (
+              ></td>
+              {months.map((month) => (
+                <td
+                  key={month}
+                  style={{
+                    padding: "8px",
+                    backgroundColor: "#e6e6e6",
+                    border: "1px solid #ccc",
+                    fontWeight: "normal",
+                    textAlign: "center",
+                    minWidth: "100px",
+                  }}
+                >
+                  {month}
+                </td>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {archiveData.map((yearData) => (
+              <tr key={yearData.year}>
+                <td
+                  style={{
+                    padding: "12px",
+                    backgroundColor: "#e6e6e6",
+                    border: "1px solid #ccc",
+                    textAlign: "left",
+                  }}
+                >
+                  {yearData.year} год
+                </td>
+                {months.map((_, monthIndex) => {
+                  const entry = yearData.entries[monthIndex];
+                  return (
+                    <td
+                      key={monthIndex}
+                      style={{
+                        padding: "8px",
+                        border: "1px solid #ccc",
+                        textAlign: "center",
+                        backgroundColor: "#f9f9f9",
+                      }}
+                    >
+                      {entry ? (
+                        entry.status ? (
+                          <span style={{ color: "#666", fontSize: "14px" }}>
+                            {entry.status}
+                          </span>
+                        ) : (
+                          <Link
+                            href={`/archive/${entry.id}`}
+                            style={{
+                              color: "#0066cc",
+                              textDecoration: "none",
+                              fontSize: "14px",
+                            }}
+                          >
+                            №{entry.number}
+                          </Link>
+                        )
+                      ) : isAdmin ? (
                         <Link
-                          href={`/archive/${entry.id}`}
+                          href={`/admin/archive/new?year=${yearData.year}&month=${monthIndex}`}
                           style={{
-                            color: "#0066cc",
+                            color: "#999",
                             textDecoration: "none",
                             fontSize: "14px",
                           }}
                         >
-                          №{entry.number}
+                          + Добавить
                         </Link>
-                      )
-                    ) : null}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                      ) : null}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

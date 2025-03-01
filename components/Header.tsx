@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 const Header = () => {
   return (
@@ -103,40 +102,34 @@ const Header = () => {
               </Link>
               <div className="absolute left-0 w-60 bg-[#003366] text-white shadow-lg rounded-md hidden group-hover:block">
                 <Link
-                  href="/authors/rules"
+                  href="/authors/pravila-oformleniya-statey"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
-                  Правила публикации
+                  Правила оформления статей
                 </Link>
                 <Link
-                  href="/authors/preparation"
+                  href="/authors/oformlenie-statey"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
-                  Подготовка статьи
+                  Оформление статей
                 </Link>
                 <Link
-                  href="/authors/review"
+                  href="/authors/informaciya-na-angliyskom-yazyke"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
-                  Рецензирование
+                  Информация на английском языке
                 </Link>
                 <Link
-                  href="/authors/policy"
+                  href="/authors/svedeniya-ob-avtorakh"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
-                  Политика журнала
+                  Сведения об авторах
                 </Link>
                 <Link
-                  href="/authors/copyright"
+                  href="/authors/poryadok-recenzirovaniya-rukopisej-statej"
                   className="block px-4 py-2 hover:bg-[#004488]"
                 >
-                  Авторские права
-                </Link>
-                <Link
-                  href="/authors/faq"
-                  className="block px-4 py-2 hover:bg-[#004488]"
-                >
-                  Часто задаваемые вопросы
+                  Порядок рецензирования рукописей статей
                 </Link>
               </div>
             </div>
@@ -145,7 +138,7 @@ const Header = () => {
       </div>
 
       {/* Search bar */}
-      <div className="bg-[#003366] border-y border-blue-900">
+      {/* <div className="bg-[#003366] border-y border-blue-900">
         <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
           <h2 className="text-white text-lg">
             Вестник Томского государственного университета
@@ -165,7 +158,7 @@ const Header = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
