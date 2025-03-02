@@ -19,7 +19,7 @@ export async function createIssue(formData: FormData) {
   const month = Number.parseInt(formData.get("month") as string);
   const number = Number.parseInt(formData.get("number") as string);
   const status = formData.get("status") as string;
-  const pdfFile = formData.get("pdf") as File;
+  // const pdfFile = formData.get("pdf") as File;
 
   // In a real app, you would:
   // 1. Validate the input

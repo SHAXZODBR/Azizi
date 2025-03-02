@@ -1,33 +1,37 @@
-import Link from "next/link"
-import { getSession } from "@/app/actions/auth"
-import { createArticle } from "@/app/actions/archive"
-import { redirect } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import Link from "next/link";
+import { getSession } from "@/app/actions/auth";
+import { createArticle } from "@/app/actions/archive";
+import { redirect } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
-// Mock function to get issue data
+interface PageProps {
+  params: { id: string };
+}
+
+// Function to get issue data
 const getIssueData = (id: string) => {
-  const issueNumber = Number.parseInt(id, 10)
+  const issueNumber = Number.parseInt(id, 10);
 
   return {
     id,
     number: issueNumber,
     year: issueNumber <= 497 ? 2023 : 2024,
     month: issueNumber % 12 || 12,
-  }
-}
+  };
+};
 
-export default async function NewArticlePage({ params }: { params: { id: string } }) {
-  const session = await getSession()
+export default async function NewArticlePage({ params }: PageProps) {
+  const session = await getSession(); // Await the session
 
   // Check if user is admin, if not, redirect to login
   if (!session || session.role !== "admin") {
-    redirect("/login")
+    redirect("/login");
   }
 
-  const issue = getIssueData(params.id)
+  const issue = getIssueData(params.id);
 
   const categories = [
     "ИСТОРИЯ",
@@ -38,7 +42,7 @@ export default async function NewArticlePage({ params }: { params: { id: string 
     "ПРАВО",
     "ЭКОНОМИКА",
     "ПСИХОЛОГИЯ",
-  ]
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -47,14 +51,18 @@ export default async function NewArticlePage({ params }: { params: { id: string 
           <div className="text-xl font-bold">Панель администратора</div>
           <nav className="flex gap-4">
             <Link href={`/archive/${params.id}`}>
-              <button className="px-4 py-2 border rounded">Назад к выпуску</button>
+              <button className="px-4 py-2 border rounded">
+                Назад к выпуску
+              </button>
             </Link>
           </nav>
         </div>
       </header>
 
       <div className="container py-8">
-        <h1 className="text-2xl font-bold mb-6">Добавить статью в выпуск №{issue.number}</h1>
+        <h1 className="text-2xl font-bold mb-6">
+          Добавить статью в выпуск №{issue.number}
+        </h1>
 
         <div className="max-w-2xl mx-auto">
           <form action={createArticle} className="space-y-6">
@@ -62,7 +70,12 @@ export default async function NewArticlePage({ params }: { params: { id: string 
 
             <div className="space-y-2">
               <Label htmlFor="category">Категория</Label>
-              <select id="category" name="category" className="w-full p-2 border rounded" required>
+              <select
+                id="category"
+                name="category"
+                className="w-full p-2 border rounded"
+                required
+              >
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
@@ -73,7 +86,12 @@ export default async function NewArticlePage({ params }: { params: { id: string 
 
             <div className="space-y-2">
               <Label htmlFor="authors">Авторы</Label>
-              <Input id="authors" name="authors" placeholder="Иванов И.И., Петров П.П." required />
+              <Input
+                id="authors"
+                name="authors"
+                placeholder="Иванов И.И., Петров П.П."
+                required
+              />
             </div>
 
             <div className="space-y-2">
@@ -89,7 +107,13 @@ export default async function NewArticlePage({ params }: { params: { id: string 
 
               <div className="space-y-2">
                 <Label htmlFor="articleNumber">Номер статьи</Label>
-                <Input id="articleNumber" name="articleNumber" type="number" placeholder="1" required />
+                <Input
+                  id="articleNumber"
+                  name="articleNumber"
+                  type="number"
+                  placeholder="1"
+                  required
+                />
               </div>
             </div>
 
@@ -108,6 +132,5 @@ export default async function NewArticlePage({ params }: { params: { id: string 
         </div>
       </div>
     </div>
-  )
+  );
 }
-

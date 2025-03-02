@@ -1,4 +1,5 @@
 import SideBar from "@/components/SideBar";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -9,9 +10,9 @@ export default function Page() {
           {/* Left content - 3 columns */}
           <div className="md:col-span-3">
             <div className="text-sm space-y-4 flex flex-col text-blue-700 underline">
-              <a href="/editorials/editorial/">🢂 Редакции</a>
-              <a href="/editorials/contacts/">🢂 Контакты</a>
-              <a href="/editorials/collegues/">🢂 Редакционная коллегия</a>
+              <Link href="/editorials/editorial/">🢂 Редакции</Link>
+              <Link href="/editorials/contacts/">🢂 Контакты</Link>
+              <Link href="/editorials/collegues/">🢂 Редакционная коллегия</Link>
             </div>
           </div>
 

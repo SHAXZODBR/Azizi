@@ -1,59 +1,35 @@
-import Link from "next/link"
-import { getSession } from "@/app/actions/auth"
-import { updateArticle } from "@/app/actions/archive"
-import { redirect } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { getSession } from "@/app/actions/auth";
+import { updateArticle } from "@/app/actions/archive";
+import { redirect } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
-// Mock function to get issue data
-const getIssueData = (id: string) => {
-  const issueNumber = Number.parseInt(id, 10)
+// Define the params type
+type EditArticleParams = {
+  id: string;
+  articleId: string;
+};
 
-  return {
-    id,
-    number: issueNumber,
-    year: issueNumber <= 497 ? 2023 : 2024,
-    month: issueNumber % 12 || 12,
-  }
-}
+// Use type assertion to handle the Promise constraint
+export default async function EditArticlePage({
+  params,
+}: {
+  params: EditArticleParams;
+}) {
+  // Cast params if needed
+  const { id, articleId } = params as EditArticleParams;
 
-// Mock function to get article data
-const getArticleData = (issueId: string, articleId: string) => {
-  const issueNumber = Number.parseInt(issueId, 10)
-  const articleNumber = Number.parseInt(articleId.split("-")[1], 10)
+  const session = await getSession();
 
-  return {
-    id: articleId,
-    category:
-      articleNumber <= 3
-        ? "ИСТОРИЯ"
-        : articleNumber <= 9
-          ? "ФИЛОЛОГИЯ"
-          : articleNumber <= 14
-            ? "ФИЛОСОФИЯ"
-            : articleNumber <= 16
-              ? "СОЦИОЛОГИЯ И ПОЛИТОЛОГИЯ"
-              : "ПЕДАГОГИКА",
-    authors: "Иванов И.И., Петров П.П.",
-    title: "Название статьи для редактирования",
-    pages: `${articleNumber * 5}-${articleNumber * 5 + 9}`,
-    articleNumber: articleNumber,
-    pdfUrl: "/sample-article.pdf",
-  }
-}
-
-export default async function EditArticlePage({ params }: { params: { id: string; articleId: string } }) {
-  const session = await getSession()
-
-  // Check if user is admin, if not, redirect to login
   if (!session || session.role !== "admin") {
-    redirect("/login")
+    redirect("/login");
   }
 
-  const issue = getIssueData(params.id)
-  const article = getArticleData(params.id, params.articleId)
+  const issue = getIssueData(id);
+  const article = getArticleData(id, articleId);
 
   const categories = [
     "ИСТОРИЯ",
@@ -64,7 +40,7 @@ export default async function EditArticlePage({ params }: { params: { id: string
     "ПРАВО",
     "ЭКОНОМИКА",
     "ПСИХОЛОГИЯ",
-  ]
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -72,15 +48,19 @@ export default async function EditArticlePage({ params }: { params: { id: string
         <div className="container flex h-16 items-center justify-between">
           <div className="text-xl font-bold">Панель администратора</div>
           <nav className="flex gap-4">
-            <Link href={`/archive/${params.id}`}>
-              <button className="px-4 py-2 border rounded">Назад к выпуску</button>
+            <Link href={`/archive/${id}`}>
+              <button className="px-4 py-2 border rounded">
+                Назад к выпуску
+              </button>
             </Link>
           </nav>
         </div>
       </header>
 
       <div className="container py-8">
-        <h1 className="text-2xl font-bold mb-6">Редактировать статью в выпуске №{issue.number}</h1>
+        <h1 className="text-2xl font-bold mb-6">
+          Редактировать статью в выпуске №{issue.number}
+        </h1>
 
         <div className="max-w-2xl mx-auto">
           <form action={updateArticle} className="space-y-6">
@@ -106,18 +86,34 @@ export default async function EditArticlePage({ params }: { params: { id: string
 
             <div className="space-y-2">
               <Label htmlFor="authors">Авторы</Label>
-              <Input id="authors" name="authors" defaultValue={article.authors} required />
+              <Input
+                id="authors"
+                name="authors"
+                defaultValue={article.authors}
+                required
+              />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="title">Название статьи</Label>
-              <Textarea id="title" name="title" defaultValue={article.title} rows={2} required />
+              <Textarea
+                id="title"
+                name="title"
+                defaultValue={article.title}
+                rows={2}
+                required
+              />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="pages">Страницы</Label>
-                <Input id="pages" name="pages" defaultValue={article.pages} required />
+                <Input
+                  id="pages"
+                  name="pages"
+                  defaultValue={article.pages}
+                  required
+                />
               </div>
 
               <div className="space-y-2">
@@ -133,15 +129,19 @@ export default async function EditArticlePage({ params }: { params: { id: string
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="pdf">PDF файл статьи (оставьте пустым, чтобы сохранить текущий)</Label>
+              <Label htmlFor="pdf">
+                PDF файл статьи (оставьте пустым, чтобы сохранить текущий)
+              </Label>
               <Input id="pdf" name="pdf" type="file" accept=".pdf" />
               {article.pdfUrl && (
-                <p className="text-sm text-gray-500">Текущий файл: {article.pdfUrl.split("/").pop()}</p>
+                <p className="text-sm text-gray-500">
+                  Текущий файл: {article.pdfUrl.split("/").pop()}
+                </p>
               )}
             </div>
 
             <div className="flex justify-end gap-4">
-              <Link href={`/archive/${params.id}`}>
+              <Link href={`/archive/${id}`}>
                 <Button variant="outline">Отмена</Button>
               </Link>
               <Button type="submit">Сохранить изменения</Button>
@@ -150,6 +150,39 @@ export default async function EditArticlePage({ params }: { params: { id: string
         </div>
       </div>
     </div>
-  )
+  );
 }
 
+// Helper function for issue data
+function getIssueData(id: string) {
+  const issueNumber = Number.parseInt(id, 10);
+  return {
+    id,
+    number: issueNumber,
+    year: issueNumber <= 497 ? 2023 : 2024,
+    month: issueNumber % 12 || 12,
+  };
+}
+
+// Helper function for article data
+function getArticleData(issueId: string, articleId: string) {
+  const articleNumber = Number.parseInt(articleId.split("-")[1], 10);
+  return {
+    id: articleId,
+    category:
+      articleNumber <= 3
+        ? "ИСТОРИЯ"
+        : articleNumber <= 9
+        ? "ФИЛОЛОГИЯ"
+        : articleNumber <= 14
+        ? "ФИЛОСОФИЯ"
+        : articleNumber <= 16
+        ? "СОЦИОЛОГИЯ И ПОЛИТОЛОГИЯ"
+        : "ПЕДАГОГИКА",
+    authors: "Иванов И.И., Петров П.П.",
+    title: "Название статьи для редактирования",
+    pages: `${articleNumber * 5}-${articleNumber * 5 + 9}`,
+    articleNumber: articleNumber,
+    pdfUrl: "/sample-article.pdf",
+  };
+}

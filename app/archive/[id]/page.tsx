@@ -214,7 +214,7 @@ export default async function IssuePage({
                   <div key={article.id} className="flex justify-between">
                     <p>
                       <span className="font-semibold">{article.authors}</span>{" "}
-                      {article.title} //
+                      {article.title}
                       {article.journal}. {article.year}. № {article.issue}. С.{" "}
                       {article.pages}. doi: {article.doi}
                     </p>
